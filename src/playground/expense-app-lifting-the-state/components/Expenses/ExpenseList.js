@@ -15,8 +15,6 @@ const ExpenseList = (props) => {
         />
       );
     });
-  } else {
-    console.log("Jamelio");
   }
 
   return <ul>{expensesContent}</ul>;

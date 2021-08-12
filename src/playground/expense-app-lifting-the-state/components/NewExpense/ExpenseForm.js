@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [isAddExForm, setIsAddExForm] = useState(false);
   // const [stateInput, setStateInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
@@ -24,16 +25,29 @@ const ExpenseForm = (props) => {
   };
 
   const onSubmitExpenseHandler = (e) => {
-    debugger;
     e.preventDefault();
     props.onAddExpense({
       title: enteredTitle,
-      amount: enteredAmount,
-      date: enteredDate,
+      amount: +enteredAmount,
+      date: new Date(enteredDate),
     });
   };
 
-  return (
+  const toggleNewExpenseForm = () => {
+    setIsAddExForm(true);
+  };
+
+  const addNewJSXExpenseButton = (
+    <div className="news-expense__control">
+      <button onClick={toggleNewExpenseForm}>Add New Expense</button>
+    </div>
+  );
+
+  useEffect(() => {
+    console.table(isAddExForm);
+  }, [isAddExForm]);
+
+  let formAddExpense = (
     <form onSubmit={onSubmitExpenseHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -58,12 +72,27 @@ const ExpenseForm = (props) => {
             onChange={enteredDateChangeHandler}
           />
         </div>
+        <button
+          onClick={(e) => {
+            console.log(e);
+            setIsAddExForm(false);
+          }}
+        >
+          Cancel
+        </button>
+        <div className="news-expense__control">
+          <button onClick={toggleNewExpenseForm}>Cancel</button>
+        </div>
         <div className="news-expense__control">
           <button type="submit">Add Expense</button>
         </div>
       </div>
     </form>
   );
+  let formExpense = "";
+  formExpense = isAddExForm ? formAddExpense : addNewJSXExpenseButton;
+
+  return formExpense;
 };
 
 export default ExpenseForm;
