@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import App from "./playground/expense-app-lifting-the-state/App";
+import App from "./playground/form-validation/App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

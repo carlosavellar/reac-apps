@@ -1,0 +1,7 @@
+.box {
+  border-radius: 7px;
+  background-color: #fff;
+  max-width: 36rem;
+  margin: auto;
+  justify-content: center;
+}
