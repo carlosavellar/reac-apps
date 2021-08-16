@@ -43,6 +43,7 @@ const AddUser = (props) => {
   };
 
   const errorHandler = () => {
+    debugger;
     setError(null);
   };
 
