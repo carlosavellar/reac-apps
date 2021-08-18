@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import App from "./playground/use-reducer/src/App";
+import App from "./playground/react-context/src/App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
