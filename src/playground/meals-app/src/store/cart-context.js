@@ -2,9 +2,9 @@ import React from "react";
 
 export default React.createContext({
   item: [],
-  totalItems: "",
+  totalAmount: "",
   addItem: (item) => {},
-  removeItem: (item) => {},
+  removeItem: (id) => {},
 });
 
 // import React, { useState, useEffect } from "react";
