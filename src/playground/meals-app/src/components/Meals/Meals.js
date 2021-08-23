@@ -8,7 +8,7 @@ const Meals = (props) => {
   return (
     <Fragment>
       <MealsSummary />
-      <AvailableMeals />
+      <AvailableMeals meals={props.meals} />
     </Fragment>
   );
 };

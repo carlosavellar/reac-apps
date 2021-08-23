@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 // import "./index.css";
 import App from "./playground/meals-app/src/components/App";
 import reportWebVitals from "./reportWebVitals";
-import { CartContextProvider } from "./playground/meals-app/src/components/store/CartContext";
+import CartContext from "./playground/meals-app/src/store/cart-context";
 ReactDOM.render(
-  <CartContextProvider>
+  <CartContext.Provider>
     <App />
-  </CartContextProvider>,
+  </CartContext.Provider>,
   document.getElementById("root")
 );
 

@@ -1,37 +1,39 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 import Header from "./Layout/Header";
 import Meals from "./Meals/Meals";
 import Cart from "./Cart/Cart";
-import { CartContext } from "../store/CartContext";
+import { DUMMY_MEALS } from "./../store/dummy-meals";
 import "./App.css";
-function App() {
-  // const [isCartShown, setIsCartShown] = useState(false);
+const App = (props) => {
+  const [isCartShown, setIsCartShown] = useState(false);
+  const [meals, setMeals] = useState([]);
+  const closeCartHandler = () => {
+    setIsCartShown(false);
+  };
 
-  // const closeCartHandler = () => {
-  //   setIsCartShown(false);
-  // };
+  const showCartHandler = () => {
+    debugger;
+    console.log("www");
+    setIsCartShown(true);
+  };
+  // const cartCtx = useContext(CartContext);
 
-  // const showCartHandler = () => {
-  //   debugger;
-  //   console.log("www");
-  //   setIsCartShown(true);
-  // };
-  const cartCtx = useContext(CartContext);
+  useEffect(() => {
+    setMeals(DUMMY_MEALS);
+  }, []);
+
   return (
     <Fragment>
-      {cartCtx.isCartShown && (
-        <Cart
-          onClose={cartCtx.closeCartHandler}
-          onShow={cartCtx.showCartHandler}
-        />
+      {isCartShown && (
+        <Cart onClose={closeCartHandler} onShow={props.showCartHandler} />
       )}
-      <Header onShowCart={cartCtx.onShowCart} />
+      <Header onShowCart={showCartHandler} />
       <main>
-        <Meals />
+        <Meals meals={meals} />
       </main>
     </Fragment>
   );
-}
+};
 
 export default App;
