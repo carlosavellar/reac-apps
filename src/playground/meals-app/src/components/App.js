@@ -3,6 +3,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import Header from "./Layout/Header";
 import Meals from "./Meals/Meals";
 import Cart from "./Cart/Cart";
+import CartProvider from "./../store/CartContext";
+
 import { DUMMY_MEALS } from "./../store/dummy-meals";
 import "./App.css";
 const App = (props) => {
@@ -24,7 +26,7 @@ const App = (props) => {
   }, []);
 
   return (
-    <Fragment>
+    <CartProvider>
       {isCartShown && (
         <Cart onClose={closeCartHandler} onShow={props.showCartHandler} />
       )}
@@ -32,7 +34,7 @@ const App = (props) => {
       <main>
         <Meals meals={meals} />
       </main>
-    </Fragment>
+    </CartProvider>
   );
 };
 

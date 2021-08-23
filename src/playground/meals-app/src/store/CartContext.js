@@ -2,9 +2,9 @@ import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
   const cartContext = {
-    item: [],
-    totalAmount: "",
-    addItem: (item) => {},
+    items: [0],
+    totalAmount: 0,
+    addItem: (item) => console.log("Ceia"),
     removeItem: (id) => {},
   };
   return (

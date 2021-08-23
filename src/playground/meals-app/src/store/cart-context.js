@@ -1,8 +1,8 @@
 import React from "react";
 
 export default React.createContext({
-  item: [],
-  totalAmount: "",
+  items: [],
+  totalAmount: 0,
   addItem: (item) => {},
   removeItem: (id) => {},
 });

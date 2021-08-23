@@ -3,13 +3,7 @@ import ReactDOM from "react-dom";
 // import "./index.css";
 import App from "./playground/meals-app/src/components/App";
 import reportWebVitals from "./reportWebVitals";
-import CartContext from "./playground/meals-app/src/store/CartContext";
-ReactDOM.render(
-  <CartContext>
-    <App />
-  </CartContext>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
