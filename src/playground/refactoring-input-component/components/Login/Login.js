@@ -1,9 +1,16 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, {
+  useState,
+  useEffect,
+  useReducer,
+  useRef,
+  useContext,
+} from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input";
+import AuthContext from "./../../store/AuthContext";
 
 const emailReducer = (state, action) => {
   switch (action.type) {
@@ -37,6 +44,7 @@ const Login = (props) => {
   // const [enteredPassword, setEnteredPassword] = useState("");
   // const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+  const ctx = useContext(AuthContext);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
@@ -100,16 +108,27 @@ const Login = (props) => {
     dispatchPassword({ type: "INPUT_BLUR" });
   };
 
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailState.value, passwordState.value);
-    dispatchEmail({ type: "INPUT_CLEAR" });
-    dispatchPassword({ type: "INPUT_CLEAR" });
+
+    if (formIsValid) {
+      ctx.onLogin(emailState.value, passwordState.value);
+      // dispatchEmail({ type: "INPUT_CLEAR" });
+      // dispatchPassword({ type: "INPUT_CLEAR" });
+    } else if (!emailIsValid) {
+      emailInputRef.current.focus();
+    } else {
+      passwordInputRef.current.focus();
+    }
   };
   return (
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
         <Input
+          ref={passwordInputRef}
           label="E-mail"
           inputType="email"
           id="email"
@@ -120,6 +139,7 @@ const Login = (props) => {
         />
 
         <Input
+          ref={passwordInputRef}
           label="Password"
           inputType="password"
           id="password"

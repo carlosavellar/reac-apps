@@ -1,7 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useImperativeHandle, forwardRef } from "react";
 
-const Input = (props) => {
+const Input = (props, ref) => {
   const inputRef = useRef();
+
+  const activate = () => {
+    inputRef.current.focus();
+  };
+
+  // useImperativeHandle(ref, () => ({
+  //   focus: activate,
+  // }));
 
   return (
     <div
@@ -11,7 +19,7 @@ const Input = (props) => {
     >
       <label htmlFor="email">{props.label}</label>
       <input
-        ref={useRef}
+        ref={inputRef}
         type={props.inputType}
         id={props.id}
         value={props.inputState.value}

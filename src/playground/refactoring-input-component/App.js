@@ -13,6 +13,7 @@ function App() {
         isAuthenticated={ctx.isLoggedIn}
         onLogout={ctx.logoutHandler}
       />
+      {console.log(ctx.isLoggedIn)}
       <main>
         {!ctx.isLoggedIn && <Login onLogin={ctx.onLogin} />}
         {ctx.isLoggedIn && <Home onLogout={ctx.onLout} />}
