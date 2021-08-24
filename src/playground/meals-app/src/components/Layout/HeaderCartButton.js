@@ -13,7 +13,7 @@ const HeaderCartButton = (props) => {
   }, 0);
 
   return (
-    <button className={classes.button} onClick={mealCtx.addItem}>
+    <button className={classes.button} onClick={props.onShowCart}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
