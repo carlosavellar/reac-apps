@@ -4,7 +4,6 @@ import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
 import mealsImg from "./../../assets/meals.jpg";
 // import { CartContext } from "../store/CartContext";
-debugger;
 const Header = (props) => {
   // const cartCtx = useContext(CartContext);
   return (

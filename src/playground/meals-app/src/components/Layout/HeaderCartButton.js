@@ -8,8 +8,9 @@ const HeaderCartButton = (props) => {
   const mealCtx = useContext(CartContext);
 
   const numberOfCartItems = mealCtx.items.reduce((currentItem, item) => {
+    debugger;
     return currentItem + item.amount;
-  });
+  }, 0);
 
   return (
     <button className={classes.button} onClick={mealCtx.addItem}>
