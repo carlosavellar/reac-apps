@@ -10,11 +10,30 @@ const cartDefaultState = {
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      const upDatedItems = state.items.concat(action.item);
       const updatedAmount =
         state.totalAmount + action.item.price * action.item.amount;
+
+      const existingItemIndex = state.items.findIndex((item) => {
+        return item.id === action.item.id;
+      });
+
+      const existingItem = state.items[existingItemIndex];
+
+      let updatedItems;
+
+      if (existingItem) {
+        const updatedItem = {
+          ...existingItem,
+          amount: existingItem.amount + action.item.amount,
+        };
+        updatedItems = [...state.items];
+        updatedItems[existingItemIndex] = updatedItem;
+      } else {
+        updatedItems = state.items.concat(action.item);
+      }
+
       return {
-        items: upDatedItems,
+        items: updatedItems,
         totalAmount: updatedAmount,
       };
     default:
@@ -35,6 +54,7 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeAddItem: "",
   };
+
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
