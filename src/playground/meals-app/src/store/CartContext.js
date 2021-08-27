@@ -77,7 +77,8 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {
     dispatchCart({ type: "REMOVE", id: id });
   };
-
+  \
+  //alias
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,

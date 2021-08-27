@@ -1,23 +1,26 @@
 export const DUMMY_MEALS = [
   {
-    id: "c1",
-    name: "Dinheiro alaranjado",
-    description:
-      "This screen is visible only in development. It will not appear if the app crashes in production. Open your browser’s developer console to further inspect this error.  Click the 'X' or hit ESC to dismiss this message.",
-    price: 12,
-  },
-  {
-    id: "c2",
+    id: "m1",
     name: "Sushi",
-    description:
-      "This screen is visible only in development. It will not appear if the app crashes in production. Open your browser’s developer console to further inspect this error.  Click the 'X' or hit ESC to dismiss this message.",
-    price: 34,
+    description: "Finest fish and veggies",
+    price: 22.99,
   },
   {
-    id: "c3",
-    name: "Meninas ricas",
-    description:
-      "This screen is visible only in development. It will not appear if the app crashes in production. Open your browser’s developer console to further inspect this error.  Click the 'X' or hit ESC to dismiss this message.",
-    price: 54,
+    id: "m2",
+    name: "Schnitzel",
+    description: "A german specialty!",
+    price: 16.5,
+  },
+  {
+    id: "m3",
+    name: "Barbecue Burger",
+    description: "American, raw, meaty",
+    price: 12.99,
+  },
+  {
+    id: "m4",
+    name: "Green Bowl",
+    description: "Healthy...and green...",
+    price: 18.99,
   },
 ];
