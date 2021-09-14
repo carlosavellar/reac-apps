@@ -1,4 +1,4 @@
-import CommentsList from "./../components/comments/CommentsList";
+import QuoteList from "./../components/quotes/QuoteList";
 const DUMMY_QUOTES = [
   { id: "q1", author: "Michael O'Brain", text: "Its amazing being alive" },
   {
@@ -9,7 +9,7 @@ const DUMMY_QUOTES = [
 ];
 
 const AllQuotes = (props) => {
-  return <CommentsList comments={DUMMY_QUOTES} />;
+  return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 
 export default AllQuotes;

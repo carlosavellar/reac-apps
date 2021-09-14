@@ -1,4 +1,4 @@
-import NewCommentForm from "./../components/comments/NewCommentForm";
+import QuoteForm from "./../components/quotes/QuoteForm";
 
 const NewQuote = (props) => {
   const addNewQuoteHandler = (newQuotes) => {
@@ -8,7 +8,7 @@ const NewQuote = (props) => {
   return (
     <div>
       <h1>New quote</h1>
-      <NewCommentForm onAddQuote={addNewQuoteHandler} />
+      <QuoteForm onAddQuote={addNewQuoteHandler} />
     </div>
   );
 };
