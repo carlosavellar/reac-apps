@@ -1,0 +1,48 @@
+export const DUMMY_ITEMS = [
+  {
+    id: "c1",
+    name: "Metallica",
+    album: "Black",
+    description:
+      "Some quick example text to build on the card album and make up the bulk of the card's content",
+    release: 10 / 20 / 1929,
+    active: true,
+    country: "USA",
+  },
+  {
+    id: "c2",
+    name: "Slayer",
+    album: "Season in the abyss",
+    description: "Vai toma no cú",
+    release: 10 / 20 / 1929,
+    active: true,
+    country: "Brasil",
+  },
+  {
+    id: "c3",
+    name: "Eros Ramazzotti",
+    album: "Dove c'è musica ",
+    description: "Vodoo é o carálho",
+    release: 10 / 20 / 1929,
+    active: true,
+    country: "Italy",
+  },
+  {
+    id: "c4",
+    name: "BTS",
+    album: "Kio",
+    description: "Vodoo é o carálho",
+    release: 10 / 20 / 1929,
+    active: true,
+    country: "Korea",
+  },
+  {
+    id: "c5",
+    name: "Banda da Beatriz",
+    album: "Banda da Beatriz",
+    description: "Vodoo é o carálho",
+    release: 10 / 20 / 1929,
+    active: true,
+    country: "Brasil",
+  },
+];
