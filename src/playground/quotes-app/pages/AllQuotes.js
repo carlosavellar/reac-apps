@@ -1,6 +1,6 @@
 import QuoteList from "./../components/quotes/QuoteList";
 const DUMMY_QUOTES = [
-  { id: "q1", author: "Michael O'Brain", text: "Its amazing being alive" },
+  { id: "q1", author: "Michael O'Brain", text: "Amazing being alive" },
   {
     id: "q2",
     author: "Mirella Polish Crazie",
