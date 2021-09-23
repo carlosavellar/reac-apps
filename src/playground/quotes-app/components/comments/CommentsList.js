@@ -4,6 +4,7 @@ import CommentItem from "./CommentItem";
 import classes from "./CommentsList.module.css";
 
 const CommentsList = (props) => {
+  debugger;
   return (
     <Fragment>
       <ul className={classes.comments}>
